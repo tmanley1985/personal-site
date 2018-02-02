@@ -1,0 +1,11 @@
+version: '2'
+# Services is a root level key
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: app.docker
+    volumes:
+      - ./:/var/www
+    ports:
+      - 80:3000

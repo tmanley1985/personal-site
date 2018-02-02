@@ -1,0 +1,17 @@
+FROM node:9.4
+
+# Ya got to add it before you set it.
+ADD . /var/www
+WORKDIR /var/www
+
+# The workdir is already set.
+
+RUN yarn install
+
+EXPOSE 3000
+
+# ENTRYPOINT node could be used.
+# CMD is used as an argument to the entrypoint.
+# CMD ["start"] -- this syntax starts a new shell which
+# does not have access to any environment variables.
+CMD yarn start

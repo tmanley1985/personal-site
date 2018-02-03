@@ -1,9 +1,9 @@
-import * as React from 'react';
-import './App.css';
+import * as React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import './App.css'
 
-const logo = require('./logo.svg');
-
-class App extends React.Component {
+const logo = require('./logo.svg')
+class Home extends React.Component {
   render() {
     return (
       <div className="App">
@@ -12,11 +12,19 @@ class App extends React.Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
+          To get ddstarted, edit <code>src/App.tsx</code> and save to reload.
         </p>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+const App = () => (
+  <Router>
+    <div>
+    <Route path="/" component={Home} />
+    </div>
+  </Router>
+)
+
+export default App
